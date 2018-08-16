@@ -1,4 +1,6 @@
-class EightBall.rb
+require_relative 'answer_controller.rb'
+
+class EightBall
   def initialize
    @answer_controller = AnswerController.new
   end 
@@ -13,10 +15,10 @@ class EightBall.rb
   def get_input
     puts 'Enter a question'
     user_input = gets.chomp
-    get_user_input (user_input)
+    process_user_input(user_input)
   end
 
-  def process_user_input (user_input)
+  def process_user_input(user_input)
     case user_input
     when 'QUIT'
       puts 'Goodbye'
@@ -33,7 +35,6 @@ class EightBall.rb
 
     else
       get_random_answer
-      #get random answer
     end
   end
 
@@ -45,8 +46,9 @@ class EightBall.rb
   end
 
   def reset_answers
-    @answer_controller.reset
+    @answer_controller.clear_ans
     @answer_controller.def_ans
+    puts 'Answers reset'
   end
 
   def print_answers
