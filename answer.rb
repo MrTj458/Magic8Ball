@@ -1,5 +1,10 @@
 class Answer
+    attr_reader :answer
 
-answers = ['My Sources Say Yes', 'Don\'t bet on it!', 
-'Not a Chance', 'Definitely', 'Maybe', 
-'If you do you\'ll clean it up!']
+
+    def initialize(answer)
+
+    @answer = answer
+
+    end
+end
