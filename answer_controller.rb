@@ -21,4 +21,13 @@ class AnswerController
     def get_rand
        return @answers[@answers.length * rand]
     end
+
+    def clear_ans
+       @answers.clear
+    end
+
+    def print_ans
+       @answers.each { |answer| puts answer.answer }
+    end
 end
+
